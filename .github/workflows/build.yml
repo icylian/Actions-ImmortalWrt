@@ -144,6 +144,19 @@ jobs:
         with:
           name: ImmortalWrt-build-result
           path: ImmortalWrt/bin/targets
+      
+      - uses: ncipollo/release-action@v1
+        with:
+          tag: "${{ steps.time.outputs.time }}"
+          name: "NanoPi R6S | ImmortalWrt"
+          artifacts: "ImmortalWrt/bin/targets/rockchip/armv8/*.gz"
+          allowUpdates: true
+          removeArtifacts: false
+          replacesArtifacts: true
+          makeLatest: true
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          body: |
+            ImmortalWrt test build for NanoPi R6S.
 
   build-ssh:
     if: ${{inputs.ssh == true}}

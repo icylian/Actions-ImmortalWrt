@@ -163,7 +163,7 @@ jobs:
       
       - uses: ncipollo/release-action@v1
         with:
-          tag: "${{ inputs.target }} ${{ steps.time.outputs.time }}"
+          tag: "${{ steps.time.outputs.time }}"
           name: "NanoPi ${{ inputs.target }} | ImmortalWrt"
           artifacts: "ImmortalWrt/bin/targets/rockchip/armv8/*.gz"
           allowUpdates: true

@@ -33,6 +33,13 @@ jobs:
     runs-on: ubuntu-latest
     name: 🚀 编译 (Build)
     steps:
+      - name: Get Time
+        id: time
+        uses: nanzm/get-time-action@master
+        with:
+          timeZone: UTC
+          format: 'YYYYMMDD-HHmm'
+    
       - name: Before freeing up disk space
         run: |
           echo "Before freeing up disk space"

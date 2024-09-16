@@ -164,7 +164,7 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           tag: "${{ steps.time.outputs.time }}"
-          name: "NanoPi ${{ inputs.target }} | ImmortalWrt"
+          name: "NanoPi R2S & R6S | ImmortalWrt"
           artifacts: "ImmortalWrt/bin/targets/rockchip/armv8/*.gz"
           allowUpdates: true
           removeArtifacts: false
@@ -172,7 +172,8 @@ jobs:
           makeLatest: true
           token: "${{ secrets.GITHUB_TOKEN }}"
           body: |
-            Custom ImmortalWrt build from source code for NanoPi ${{ inputs.target }} with:
+            ⚠The firmware listed below is not tested by default. Please be prepared for date backup and version rollback.
+            Custom ImmortalWrt build from source code for NanoPi R2S & R6S with:
 
             - Admin: root@192.168.11.1
             - Sources: ${{ inputs.repo }}/${{ inputs.branch }}

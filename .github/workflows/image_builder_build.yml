@@ -108,7 +108,7 @@ jobs:
           sed -i 's/CONFIG_TARGET_PREINIT_IP="192.168.1.1"/CONFIG_TARGET_PREINIT_IP="192.168.11.1"/' .config
           sed -i 's/CONFIG_TARGET_PREINIT_BROADCAST="192.168.1.255"/CONFIG_TARGET_PREINIT_BROADCAST="192.168.11.255"/' .config
       
-      - name: Add third-part packages
+      - name: Add third-party packages (Mosdns & Mihomo)
         working-directory: immortalwrt-imagebuilder-rockchip-armv8.Linux-x86_64
         run: |
           wget https://github.com/morytyann/OpenWrt-mihomo/releases/latest/download/mihomo_aarch64_generic.tar.gz
@@ -174,7 +174,7 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           tag: "${{ steps.time.outputs.time }}"
-          name: "NanoPi | ImmortalWrt"
+          name: "NanoPi | ImmortalWrt | SNAPSHOT"
           artifacts: "immortalwrt-imagebuilder-rockchip-armv8.Linux-x86_64/bin/targets/rockchip/armv8/*.gz"
           allowUpdates: true
           removeArtifacts: false
@@ -182,8 +182,8 @@ jobs:
           makeLatest: true
           token: "${{ secrets.GITHUB_TOKEN }}"
           body: |
-            ⚠The firmware listed below is not tested by default. Please be prepared for date backup and version rollback.
-            Custom ImmortalWrt build from source code for NanoPi RXS with:
+            **⚠The firmware listed below is not tested by default. Please be prepared for date backup and version rollback.**
+            Custom ImmortalWrt build from source code for NanoPi Series with:
 
             - Admin: root@192.168.11.1
             - Sources: ${{ inputs.image_builder }}

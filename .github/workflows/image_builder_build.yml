@@ -131,6 +131,7 @@ jobs:
                 libstdcpp logd mtd netifd openwrt-keyring opkg procd procd-seccomp procd-ujail rpcd \
                 rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-ucode ubox ubus ubusd uci urandom-seed urngd usign \
                 autocore automount cpufreq ipv6helper \
+                luci-app-alist alist \
                 libiwinfo-data kmod-scsi-core kmod-crypto-acompress kmod-crypto-aead kmod-crypto-arc4 \
                 kmod-crypto-blake2b kmod-crypto-crc32c kmod-crypto-ecb kmod-crypto-hash kmod-crypto-hmac \
                 kmod-crypto-manager kmod-crypto-null kmod-crypto-rng kmod-crypto-sha1 kmod-crypto-sha3 \
@@ -187,4 +188,4 @@ jobs:
             - Admin: root@192.168.11.1
             - Sources: ${{ inputs.image_builder }}
             - Extensions: 
-              Luci WebUI, Docker, QBEE, Syncthing, Zerotier, Mosdns and Mihomo.
+              Luci WebUI, Docker, Alist, QBEE, Syncthing, Zerotier, Mosdns and Mihomo.

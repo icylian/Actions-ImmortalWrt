@@ -105,8 +105,8 @@ jobs:
         working-directory: immortalwrt-imagebuilder-rockchip-armv8.Linux-x86_64
         run: |
           sed -i 's/CONFIG_TARGET_ROOTFS_PARTSIZE=300/CONFIG_TARGET_ROOTFS_PARTSIZE=1024/' .config
-          sed -i 's/CONFIG_TARGET_PREINIT_IP="192.168.1.1"/CONFIG_TARGET_PREINIT_IP="192.168.11.1"/' .config
-          sed -i 's/CONFIG_TARGET_PREINIT_BROADCAST="192.168.1.255"/CONFIG_TARGET_PREINIT_BROADCAST="192.168.11.255"/' .config
+          # sed -i 's/CONFIG_TARGET_PREINIT_IP="192.168.1.1"/CONFIG_TARGET_PREINIT_IP="192.168.11.1"/' .config
+          # sed -i 's/CONFIG_TARGET_PREINIT_BROADCAST="192.168.1.255"/CONFIG_TARGET_PREINIT_BROADCAST="192.168.11.255"/' .config
       
       - name: Add third-party packages (Mosdns & Mihomo)
         working-directory: immortalwrt-imagebuilder-rockchip-armv8.Linux-x86_64
